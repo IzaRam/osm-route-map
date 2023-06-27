@@ -21,8 +21,12 @@ export class MapService {
 		return this.http.get<Nep[]>(this.baseUrl + "all");
 	}
 
-    getPath(source: number, target: number): Observable<Nep[]> {
+  getPath(source: number, target: number): Observable<Nep[]> {
 		return this.http.get<Nep[]>(this.baseUrl + "test4/" + source + "/" + target);
+	}
+
+  getSourceFromVertex(id: number): Observable<number> {
+		return this.http.get<number>(this.baseUrl + "source/" + id);
 	}
 
 }
